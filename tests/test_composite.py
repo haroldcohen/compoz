@@ -36,7 +36,7 @@ def test_composite_should_return_a_number_plus_3(number: int):
     ],
     indirect=False,
 )
-def test_composite_should_return_a_filtered_delimited_string(
+def test_composite_should_return_a_filtered_then_delimited_string(
         text: str,
         limit: int,
         to_filter: str,
