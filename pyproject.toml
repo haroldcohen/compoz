@@ -27,6 +27,7 @@ keywords = [
 Homepage = "https://github.com/haroldcohen/compoz"
 Repository = "https://github.com/haroldcohen/compoz.git"
 Issues = "https://github.com/haroldcohen/compoz/issues"
+Changelog = "https://github.com/haroldcohen/compoz/blob/master/CHANGELOG.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
