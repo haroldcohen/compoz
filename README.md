@@ -6,14 +6,14 @@ Compoz is a lightweight composition package.
 
 Compoz provides with two main functions:
 
-- compose (for standard composition)
+- composite (for standard composition)
 - pipe (for reversed composition)
 
-### 'compose'
+### 'composite'
 
 #### Basic usage
 
-'compose' will run from last to the first function provided.
+'composite' will run from last to the first function provided.
 
 ```python
 from compoz import composite
