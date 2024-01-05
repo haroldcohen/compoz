@@ -30,7 +30,7 @@ def pipe(*funcs) -> Callable:
 def _compose(g, f) -> Callable:  # pylint: disable=invalid-name
     """Provides with a composite function where the result of f will be passed to g.
     """
-    def h(*args, **kwargs):  # pylint: disable=invalid-name
-        return g(f(*args, **kwargs), **kwargs)
+    def h(*args):  # pylint: disable=invalid-name
+        return g(f(*args))
 
     return h
