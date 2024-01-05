@@ -27,8 +27,8 @@ def test_pipe_should_return_a_filtered_then_delimited_string(
     def filter_string(string: str, to_fltr: str) -> str:
         return re.sub(to_fltr, '', string)
 
-    composite_func = pipe([
+    composite_func = pipe(
         partial(filter_string, to_fltr=to_filter),
         partial(delimit_string, lmt=limit),
-    ])
+    )
     assert composite_func(text) == expected

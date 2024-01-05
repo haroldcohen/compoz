@@ -1,6 +1,6 @@
 """Provides with composition tools.
 """
-from typing import Iterable, Reversible, Callable
+from typing import Callable
 from functools import reduce
 
 __all__ = [
@@ -9,19 +9,19 @@ __all__ = [
 ]
 
 
-def composite(funcs: Iterable[Callable]) -> Callable:
+def composite(*funcs) -> Callable:
     """Provides with functional composition.
 
-    :param funcs: A list of callables that will be executed from last to first when called.
+    :param funcs: A series of callables that will be executed from last to first when called.
     :return: A composite function.
     """
     return reduce(_compose, funcs)
 
 
-def pipe(funcs: Reversible[Callable]) -> Callable:
+def pipe(*funcs) -> Callable:
     """Provides with piped functional composition.
 
-    :param funcs: A list of callables that will be executed from first to last when called.
+    :param funcs: A series of callables that will be executed from first to last when called.
     :return: A piped composite function.
     """
     return reduce(_compose, reversed(funcs))

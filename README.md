@@ -27,11 +27,11 @@ def subtract_5(n: int) -> int:
     return n - 5
 
 
-composite_func_1 = composite([subtract_5, multiply_by_3])
+composite_func_1 = composite(subtract_5, multiply_by_3)
 print(composite_func_1(10))
 # Output will be 25
 
-composite_func_2 = composite([multiply_by_3, subtract_5])
+composite_func_2 = composite(multiply_by_3, subtract_5)
 print(composite_func_2(10))
 # Output will be 15
 ```
@@ -55,7 +55,7 @@ def add_actor_id(event: dict, data: dict) -> dict:
     return event
 
 
-build_event = composite([add_event_type, add_actor_id])
+build_event = composite(add_event_type, add_actor_id)
 some_data = {"event_type": "car_locked", "actor": {"id": "123"}}
 some_event = build_event({}, data=some_data)
 ```
@@ -83,11 +83,11 @@ def add_event_type(event: dict, event_type: str) -> dict:
     return event
 
 
-build_event = composite([
+build_event = composite(
     partial(add_event_type, event_type="car_locked"),
     add_header,
     add_body,
-])
+)
 some_event = build_event({})
 ```
 
@@ -107,11 +107,11 @@ def subtract_5(n: int) -> int:
     return n - 5
 
 
-pipe_func_1 = pipe([subtract_5, multiply_by_3])
+pipe_func_1 = pipe(subtract_5, multiply_by_3)
 print(pipe_func_1(10))
 # Output will be 15
 
-pipe_func_2 = pipe([multiply_by_3, subtract_5])
+pipe_func_2 = pipe(multiply_by_3, subtract_5)
 print(pipe_func_2(10))
 # Output will be 25
 ```
